@@ -1,6 +1,7 @@
 # My Portfolio Website
 
 Welcome to my personal portfolio website! This is a place to showcase my skills, projects, and professional achievements. The website features interactive and smooth transitions, highlighting various sections such as projects, resume, and contact information.
+[Personal Portfolio Website](https://prathameshk11.github.io/Personal-Portfolio-website/)
 
 ## Features
 
@@ -25,5 +26,10 @@ To set up this project locally, follow these steps:
 Clone the project to your local machine:
 
 ```bash
-git clone https://github.com/your-username/portfolio-website.git
+git clone https://github.com/Prathameshk11/Personal-Portfolio-website.git
 cd portfolio-website
+```
+
+## Live Project
+
+Check out the live version of the project here: [Personal Portfolio Website](https://prathameshk11.github.io/Personal-Portfolio-website/)
