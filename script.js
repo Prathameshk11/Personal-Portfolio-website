@@ -5,6 +5,7 @@ const menuIcon = document.querySelector('#menu-icon');
 const navbar = document.querySelector('header nav');
 
 
+
 menuIcon.addEventListener('click', ()=> {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
@@ -119,9 +120,9 @@ arrowLeft.addEventListener('click', ()=>{
 });
 
 
-// Initialize EmailJS with your user ID
+
 (function() {
-    emailjs.init("x3m-FcL0uIa21wE3l");
+    emailjs.init(emailConfig.userID);
 })();
 
 function sendEmail(e) {
@@ -145,28 +146,25 @@ function sendEmail(e) {
         phone: document.getElementById('phone').value,
         subject: document.getElementById('subject').value,
         message: document.getElementById('message').value,
-        to_email: 'prathamesh.k0904@gmail.com' 
+        to_email: emailConfig.toEmail
     };
 
-    emailjs.send('service_77kkap1', 'template_7v57w9c', templateParams)
-        .then(function(response) {
-            // Create success message
+    emailjs
+        .send(emailConfig.serviceID, emailConfig.templateID, templateParams)
+        .then(function (response) {
             const successMessage = document.createElement('div');
             successMessage.className = 'success-message';
             successMessage.textContent = 'Message sent successfully!';
             form.appendChild(successMessage);
 
-            // Reset form
             form.reset();
-        }, function(error) {
-            // Create error message
+        }, function (error) {
             const errorMessage = document.createElement('div');
             errorMessage.className = 'error-message';
             errorMessage.textContent = 'Failed to send message. Please try again.';
             form.appendChild(errorMessage);
         })
-        .finally(function() {
-            // Reset button state
+        .finally(function () {
             form.classList.remove('submitting');
             buttonText.classList.remove('hidden');
             buttonLoader.classList.add('hidden');
